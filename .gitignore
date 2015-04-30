@@ -1,0 +1,6 @@
+*.swa
+*.swp
+*.swo
+node_modules
+bower_components
+*.log
