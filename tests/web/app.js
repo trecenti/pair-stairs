@@ -12,18 +12,6 @@ describe('get /', function () {
   });
 });
 
-describe('post /stairs', function () {
-  it('redirects to the pair stairs page', function (done) {
-    agent(app)
-      .post('/stairs/')
-      .expect(302)
-      .expect(function (res) {
-        expect(res.header['location']).to.match(/\/stairs\/\d+/);
-      })
-      .end(done);
-  });
-});
-
 describe('get /stairs/12334', function () {
   it('renders the pair stairs page for that id', function (done) {
     agent(app)
