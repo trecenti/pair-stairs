@@ -16,4 +16,12 @@ app.get('/', function (req, res) {
   return res.render('home');
 });
 
+app.get('/stairs/:id', function (req, res) {
+  return res.render('pair-stairs');
+});
+
+app.post('/stairs/', function (req, res) {
+  return res.redirect('/stairs/12319');
+});
+
 module.exports = app;
