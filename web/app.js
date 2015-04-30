@@ -12,4 +12,8 @@ app.use(parser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../bower_components')));
 
+app.get('/', function (req, res) {
+  return res.render('home');
+});
+
 module.exports = app;
