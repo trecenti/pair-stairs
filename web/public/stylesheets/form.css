@@ -1,0 +1,113 @@
+form {
+  padding: 10px;
+}
+
+form input {
+  box-sizing: border-box;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input[type=text] {
+  width: 500px;
+}
+
+
+form input[type=submit],
+form input[type=button] {
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-left: -3px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid rgba(0,0,0, 0.2);
+  border-right: 1px solid rgba(0,0,0, 0.2);
+}
+
+form input[type=submit]:hover,
+form input[type=submit]:focus {
+  background: rgba(98, 75, 159, 0.9);
+}
+
+form input[type=button]:hover,
+form input[type=button]:focus {
+  background: rgba(232,232,232, 0.9);
+}
+
+form input[type=submit]:active,
+form input[type=button]:active {
+  border: none;
+}
+
+form input[type=submit] {
+  background: rgb(98, 75, 159);
+  color: #fff;
+}
+
+form input[type=button] {
+  background: rgb(228, 228, 228);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+form input[type=text],
+form input[type=email] {
+  margin: 0 0 1px;
+  border: 0;
+  padding: 18px 6px 12px;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  color: #333;
+}
+
+form input[type=text]:focus,
+form input[type=email]:focus {
+  border-bottom: 2px solid #624B9F;
+}
+
+form input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #888;
+  -webkit-transition: opacity 400ms;
+}
+
+form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+form input + label {
+  opacity: 0;
+  top: 12px;
+  -webkit-transition: opacity 200ms, top 500ms;
+}
+
+form input:focus + label,
+form input:required:valid + label {
+  opacity: 1;
+  top: 4px;
+}
+
+form .control {
+  position: relative;
+  margin-left: -3px;
+  display: inline-block;
+}
+
+form .control label {
+  position: absolute;
+  left: 6px;
+  font-size: 0.7em;
+  color: #888;
+}
+form .control p {
+  color: #B9121B;
+  visibility: hidden;
+}
+form .control p.visible {
+  visibility: visible;
+}

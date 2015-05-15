@@ -11,13 +11,3 @@ describe('get /', function () {
       .expect(/Create/, done);
   });
 });
-
-describe('get /stairs/12334', function () {
-  it('renders the pair stairs page for that id', function (done) {
-    agent(app)
-      .get('/stairs/12334')
-      .expect(200)
-      .expect(/Pair Stairs/)
-      .end(done);
-  });
-});

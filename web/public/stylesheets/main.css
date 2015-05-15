@@ -1,0 +1,105 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+  color: #555;
+}
+
+p span.grid:last-child,
+p span.grid:last-child:hover {
+  background: #eee;
+}
+
+p:hover span:first-child {
+  color: rgb(98, 75, 159);
+  font-weight: bold;
+}
+
+p {
+  display: flex;
+  line-height: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+p span:first-child,
+p.bottom span:first-child {
+  width: 100px;
+  text-align: right;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+p span.grid {
+  border: 1px dashed #eee;
+  position: relative;
+}
+
+p span.grid a {
+  display: none;
+}
+
+p span.grid:hover a {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 50%;
+  cursor: pointer;
+}
+
+p span.grid:hover a i {
+  line-height: 23px;
+  height: 100%;
+}
+
+p span.grid:hover a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+p span.grid:hover a:first-child {
+  top: 0;
+}
+
+p span.grid:hover a:last-child {
+  bottom: 0;
+}
+
+p span.grid:hover {
+  background: rgb(98, 75, 159);
+  color: white;
+}
+
+p span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+p.bottom span:not(:first-child) {
+  border: 1px solid transparent;
+}
+p.bottom span {
+  -webkit-writing-mode: vertical-lr;
+  line-height: 50px;
+  height: 100px;
+  text-align: left;
+  padding: 10px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+p.bottom {
+  height: 100px;
+}
+
+p.bottom span.active {
+  color: rgb(98, 75, 159);
+  font-weight: bold;
+}
+

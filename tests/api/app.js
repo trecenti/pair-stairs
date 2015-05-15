@@ -23,9 +23,9 @@ describe('get /stairs/:id', function () {
         stairId = JSON.parse(res.text).id;
         agent(app)
           .get('/stairs/' + stairId)
-          .expect({ id: stairId, pairs: { 'John Doe+Harry Potter': 0 }})
-          .expect(200, done.bind(err));
+          .expect(function (res) {
+            expect(JSON.parse(res.text).pairs).to.have.property('John Doe+Harry Potter').and.deep.equal({ count: 0 });
+          }).expect(200, done.bind(err));
       });
-
   });
 });

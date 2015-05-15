@@ -1,8 +1,3 @@
-//for local env
-if (!process.env.API_ENDPOINT) {
-  process.env.API_ENDPOINT = 'http://localhost:3000/api'
-}
-
 var express = require('express')
   , logger = require('morgan')
   , app = express()
@@ -25,10 +20,15 @@ app.use(function (req, res, next) {
 app.use(function(err, req, res, next) {
   var message = err.message;
 
+  status = err.status || 500;
+
   if (app.get('env') === 'development') {
     message += '. ' + err.stack;
+  } else {
+    message = (status === 500 ? 'Something went wrong :(' : message);
   }
-  res.status(err.status || 500);
+
+  res.status(status);
   res.send(message);
 });
 

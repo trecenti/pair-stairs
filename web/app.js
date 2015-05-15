@@ -12,12 +12,8 @@ app.use(parser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, '../bower_components')));
 
-app.get('/', function (req, res) {
-  return res.render('home');
-});
-
-app.get('/stairs/:id', function (req, res) {
-  return res.render('pair-stairs');
+app.get('*', function (req, res) {
+  return res.render('index');
 });
 
 module.exports = app;

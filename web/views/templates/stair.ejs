@@ -1,0 +1,19 @@
+<template id="stair-template">
+  <h1>Pair Stairs</h1>
+  <div>
+    <p v-repeat="dev:stair.developers">
+      <span title="{{dev.name}}">{{dev.name}}</span>
+      <span class="grid" v-repeat="other: dev.others" id="{{dev.name}}+{{other}}" v-on="mouseenter: set(other), mouseleave: unset">
+        {{count(dev.name + '+' + other)}}
+        <a v-on="click: increment(dev.name + '+' + other)"><i class="fa fa-chevron-up"></i></a>
+        <a v-on="click: decrement(dev.name + '+' + other)"><i class="fa fa-chevron-down"></i></a>
+      </span>
+      <span class="grid" v-on="mouseenter: set(dev.name), mouseleave: unset">
+      </span>
+    </p>
+    <p class="bottom">
+      <span></span>
+      <span title="{{dev.name}}" v-repeat="dev:stair.developers" v-class="active: hovering === dev.name">{{dev.name}}</span>
+    </p>
+  </div>
+</template>

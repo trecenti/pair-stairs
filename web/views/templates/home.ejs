@@ -1,0 +1,12 @@
+<template id="home-template">
+  <form v-on="submit: create">
+    <h1>Create a pair stairs</h1>
+    <div class="control">
+      <input v-model="stair.developers" id="developers" name="developers" placeholder="Lord Voldemort, Harry Potter" type="text" required></input>
+      <label for="developers">People</label>
+      <p v-class="visible: error">{{error}}</p>
+    </div>
+    <br/>
+    <input type="submit" value="Give me!" />
+  </form>
+</template>
